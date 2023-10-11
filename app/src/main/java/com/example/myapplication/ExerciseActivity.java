@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -28,14 +29,21 @@ public class ExerciseActivity extends AppCompatActivity implements ExerciseRVAda
     private void addData()
     {
         exerciseRVModalArrayList.add(new ExerciseRVModal("Планка",getResources().getString(R.string.Планка),"https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Планка",getResources().getString(R.string.Планка),"https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Планка",getResources().getString(R.string.Планка),"https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Планка",getResources().getString(R.string.Планка),"https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Планка",getResources().getString(R.string.Планка),"https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json",20,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Выпады",getResources().getString(R.string.Планка),"https://lottie.host/3d6e5689-5dce-4101-9f41-5d5349211f6b/PSsXiAusYw.json",20,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Шаги",getResources().getString(R.string.Планка),"https://lottie.host/9c6f179c-cdb8-43f6-8ee8-0ee44fbca348/3vrb6mqHpe.json",20,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Пресс",getResources().getString(R.string.Планка),"https://lottie.host/3d6e5689-5dce-4101-9f41-5d5349211f6b/PSsXiAusYw.json",20,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Отжимания",getResources().getString(R.string.Планка),"https://lottie.host/c36786b0-d000-4c40-827d-d6ae933a114d/rZjIFwzauY.json",20,10));
         exerciseRVAdapter.notifyDataSetChanged();
     }
     @Override
     public void onExerciseClick(int position) {
+        Intent i = new Intent(ExerciseActivity.this,ExerciseDetailActivity.class);
+        i.putExtra("Название",exerciseRVModalArrayList.get(position).getExerciseName());
+        i.putExtra("Изображение",exerciseRVModalArrayList.get(position).getImgUrl());
+        i.putExtra("Время",exerciseRVModalArrayList.get(position).getTime());
+        i.putExtra("Калории",exerciseRVModalArrayList.get(position).getCalories());
+        i.putExtra("Описание",exerciseRVModalArrayList.get(position).getExerciseDescription());
+        startActivity(i);
 
     }
 }

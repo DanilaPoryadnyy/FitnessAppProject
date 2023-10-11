@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         exerciseLAV = findViewById(R.id.idLAVExercise);
         counterLAV = findViewById(R.id.idLAVStepCounter);
 
-//        exerciseLAV.setAnimation("");
-//        counterLAV.setAnimationFromUrl("");
+//        exerciseLAV.setAnimation("https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json");
+//        counterLAV.setAnimationFromUrl("https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json");
 
         exerciseLL.setOnClickListener(new View.OnClickListener() {
             @Override
