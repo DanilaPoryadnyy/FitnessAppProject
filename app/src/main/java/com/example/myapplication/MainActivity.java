@@ -6,14 +6,15 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
 public class MainActivity extends AppCompatActivity {
-    private LinearLayout exerciseLL, stepCounterLL;
-    private LottieAnimationView exerciseLAV, counterLAV;
+    private LinearLayout exerciseLL, stepCounterLL, bodymassLL;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         exerciseLL = findViewById(R.id.idLLExercise);
         stepCounterLL = findViewById(R.id.idLLStepCounter);
-        exerciseLAV = findViewById(R.id.idLAVExercise);
-        counterLAV = findViewById(R.id.idLAVStepCounter);
-
-//        exerciseLAV.setAnimation("https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json");
-//        counterLAV.setAnimationFromUrl("https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json");
+        bodymassLL = findViewById(R.id.idLLBodyMass);
 
         exerciseLL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,StepCounterActivity.class);
+                startActivity(i);
+            }
+        });
+        bodymassLL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,BodyMassActivity.class);
                 startActivity(i);
             }
         });
