@@ -17,60 +17,63 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class StepCounterActivity extends AppCompatActivity implements SensorEventListener {
 
     private SensorManager sensorManager;
-    private boolean running = false;
-    private TextView stepsTV;
-    private FloatingActionButton fab;
-    float steps = 0;
+    private TextView textViewSteps;
+    private int stepCount = 0;
+    private boolean isStepCounting = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_counter);
-        sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
-        stepsTV = findViewById(R.id.idTVSteps);
-        fab = findViewById(R.id.idFAB);
-        stepsTV.setText(String.valueOf(steps));
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(running){
-                    running = false;
-                    fab.setImageResource(R.drawable.ic_play);
-                    Toast.makeText(StepCounterActivity.this, "Счётчик остановлен...", Toast.LENGTH_SHORT).show();
-                }else {
-                    running = true;
-                    fab.setImageResource(R.drawable.ic_pause);
-                    Toast.makeText(StepCounterActivity.this, "Счётчик запущен...", Toast.LENGTH_SHORT).show();
-                    startCounting();
-                }
-            }
+        textViewSteps = findViewById(R.id.textViewSteps);
 
-            private void startCounting() {
-                running = true;
-                Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-                if(sensor!=null)
-                {
-                    Toast.makeText(StepCounterActivity.this, "Датчик запущен...", Toast.LENGTH_SHORT).show();
-                    sensorManager.registerListener(StepCounterActivity.this, sensor, SensorManager.SENSOR_DELAY_FASTEST);
-                }else {
-                    Toast.makeText(StepCounterActivity.this, "Не найден датчик...", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        // Инициализация SensorManager и регистрация слушателя акселерометра
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        Sensor accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        if (accelerometer != null) {
+            sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        }
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if(running)
-        {
-            steps = steps + event.values[0];
-            stepsTV.setText(String.valueOf(steps));
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+
+            double acceleration = Math.sqrt(x * x + y * y + z * z);
+
+            if (acceleration > 10 && !isStepCounting) {
+                isStepCounting = true;
+                stepCount++;
+                textViewSteps.setText(String.valueOf(stepCount));
+            }
+
+            if (acceleration < 10) {
+                isStepCounting = false;
+            }
         }
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        // Ничего не делаем здесь
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Регистрируем слушателя акселерометра при восстановлении активности
+        Sensor accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Отменяем регистрацию слушателя акселерометра при приостановке активности
+        sensorManager.unregisterListener(this);
     }
 }
