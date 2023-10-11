@@ -52,7 +52,7 @@ public class StepCounterActivity extends AppCompatActivity implements SensorEven
                 if(sensor!=null)
                 {
                     Toast.makeText(StepCounterActivity.this, "Датчик запущен...", Toast.LENGTH_SHORT).show();
-                    sensorManager.registerListener(StepCounterActivity.this, sensor, SensorManager.SENSOR_DELAY_UI);
+                    sensorManager.registerListener(StepCounterActivity.this, sensor, SensorManager.SENSOR_DELAY_FASTEST);
                 }else {
                     Toast.makeText(StepCounterActivity.this, "Не найден датчик...", Toast.LENGTH_SHORT).show();
                 }

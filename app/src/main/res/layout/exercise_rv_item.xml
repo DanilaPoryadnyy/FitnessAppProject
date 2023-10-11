@@ -33,6 +33,7 @@
                 android:fontFamily="@font/abel"
                 android:padding="8dp"
                 android:textStyle="bold"
+                android:id="@+id/idTVExerciseName"
                 android:textColor="@color/white"
                 android:textAllCaps="true"
                 android:textSize="15sp"

@@ -7,7 +7,12 @@
     android:background="@color/background_color"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
+</ImageView>
     <TextView
         android:id="@+id/idTVHeading"
         android:layout_width="match_parent"
@@ -23,27 +28,15 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="3-ISP-11-18"
-        android:textColor="@color/design_default_color_on_primary"
-        android:fontFamily="@font/abel"
-        android:textSize="18sp"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:padding="10dp"
-        android:id="@+id/idTVSubHeading"
-        />
     <LinearLayout
-        android:layout_below="@+id/idTVSubHeading"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/idTVSubHeading"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="471dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal"
+        android:weightSum="2">
 
         <LinearLayout
             android:id="@+id/idLLExercise"
@@ -78,35 +71,35 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/idLLStepCounter"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
             android:layout_margin="4dp"
-            android:id="@+id/idLLStepCounter"
-            >
+            android:layout_weight="1"
+            android:orientation="vertical">
+
             <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/idLAVStepCounter"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                android:id="@+id/idLAVStepCounter"
-                />
+                app:lottie_loop="true" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Шагомер"
-                android:textAlignment="center"
-                android:padding="8dp"
-                android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:fontFamily="@font/abel"
-                android:textStyle="bold"
+                android:padding="8dp"
+                android:text="Шагомер"
+                android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                />
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
