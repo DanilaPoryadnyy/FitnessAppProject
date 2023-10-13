@@ -6,6 +6,20 @@
     android:background="@color/background_color"
     tools:context=".ExerciseActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="406dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:padding="12dp"
+        android:src="@drawable/sparkworkout" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +27,6 @@
         android:gravity="center_horizontal"
         android:padding="5dp"
         android:fontFamily="@font/abel"
-        android:text="Fintess app"
         android:textAllCaps="false"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -34,18 +47,18 @@
             android:layout_weight="1"
             android:orientation="vertical"
             >
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="$СЮДА ТЕКСТ"
-                android:textColor="@color/white"
-                android:fontFamily="@font/abel"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_gravity="center"
                 android:id="@+id/idTVCalories"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/abel"
+                android:text="СОЖЖЕНО"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,7 +80,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="$СЮДА ТЕКСТ"
+                android:text="ТРЕНИРОВКА"
                 android:textColor="@color/white"
                 android:fontFamily="@font/abel"
                 android:textSize="25sp"
@@ -98,11 +111,12 @@
         android:layout_marginEnd="10dp"
         android:background="@color/white"
         android:layout_below="@id/idLL"/>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVExercise"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/idLL"
-        android:layout_marginTop="10dp"
-        android:id="@+id/idRVExercise"/>
+        android:layout_marginTop="38dp" />
 
 </RelativeLayout>

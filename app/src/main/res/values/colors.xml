@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name = "background_color">#8697DA</color>
+    <color name = "background_color">#292e52</color>
     <color name = "txt_color">#A9B2DE</color>
     <color name = "parse">#7E8EDC</color>
 </resources>

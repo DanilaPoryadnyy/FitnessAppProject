@@ -7,6 +7,30 @@
     android:background="@color/background_color"
     tools:context=".ExerciseDetailActivity">
 
+    <ImageView
+        android:id="@+id/idJDI"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="670dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
+        android:padding="0dp"
+        android:src="@drawable/jdi" />
+
+    <ImageView
+        android:id="@+id/idtr"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
+        android:padding="0dp"
+        android:src="@drawable/tr" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,18 +89,17 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 />
+
             <TextView
+                android:id="@+id/idTVDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/idTVDescription"
+                android:fontFamily="@font/abel"
                 android:padding="5dp"
                 android:text="Описание"
                 android:textColor="@color/white"
-                android:fontFamily="@font/abel"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                />
-
+                android:textStyle="bold" />
 
 
         </LinearLayout>

@@ -5,33 +5,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="-10dp"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/idin"
+        android:layout_width="435dp"
+        android:layout_height="850dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:padding="0dp"
+        android:src="@drawable/in" />
+
 
     <EditText
         android:id="@+id/editTextWeight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-850dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
         android:hint="Вес (кг)"
+
         android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/editTextHeight"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-90dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
         android:hint="Рост (см)"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:padding="0dp" />
 
     <Button
         android:id="@+id/buttonCalculateIMT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="-300dp"
+        android:padding="0dp"
         android:text="Рассчитать ИМТ" />
 
     <TextView
         android:id="@+id/textViewResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="200dp" />
+
+
+
+
 </LinearLayout>
+
