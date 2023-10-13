@@ -28,11 +28,11 @@ public class ExerciseActivity extends AppCompatActivity implements ExerciseRVAda
 
     private void addData()
     {
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Планка",getResources().getString(R.string.Планка),"https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Выпады",getResources().getString(R.string.Планка),"https://lottie.host/3d6e5689-5dce-4101-9f41-5d5349211f6b/PSsXiAusYw.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Выпады на платформе",getResources().getString(R.string.Планка),"https://lottie.host/9c6f179c-cdb8-43f6-8ee8-0ee44fbca348/3vrb6mqHpe.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Пресс",getResources().getString(R.string.Планка),"https://lottie.host/3d6e5689-5dce-4101-9f41-5d5349211f6b/PSsXiAusYw.json",20,10));
-        exerciseRVModalArrayList.add(new ExerciseRVModal("Отжимания",getResources().getString(R.string.Планка),"https://lottie.host/c36786b0-d000-4c40-827d-d6ae933a114d/rZjIFwzauY.json",20,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Планка",getResources().getString(R.string.Планка),"https://assets3.lottiefiles.com/packages/lf20_EOXjkv.json",15,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Выпады",getResources().getString(R.string.Выпады),"https://lottie.host/3d6e5689-5dce-4101-9f41-5d5349211f6b/PSsXiAusYw.json",20,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Выпады на платформе",getResources().getString(R.string.Выпады),"https://lottie.host/9c6f179c-cdb8-43f6-8ee8-0ee44fbca348/3vrb6mqHpe.json",17,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Пресс",getResources().getString(R.string.Пресс),"https://lottie.host/3d6e5689-5dce-4101-9f41-5d5349211f6b/PSsXiAusYw.json",14,10));
+        exerciseRVModalArrayList.add(new ExerciseRVModal("Отжимания",getResources().getString(R.string.Отжимания),"https://lottie.host/c36786b0-d000-4c40-827d-d6ae933a114d/rZjIFwzauY.json",25,10));
         exerciseRVAdapter.notifyDataSetChanged();
     }
     @Override

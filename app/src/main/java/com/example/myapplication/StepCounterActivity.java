@@ -28,7 +28,6 @@ public class StepCounterActivity extends AppCompatActivity implements SensorEven
 
         textViewSteps = findViewById(R.id.textViewSteps);
 
-        // Инициализация SensorManager и регистрация слушателя акселерометра
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         if (accelerometer != null) {
@@ -59,13 +58,11 @@ public class StepCounterActivity extends AppCompatActivity implements SensorEven
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // Ничего не делаем здесь
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Регистрируем слушателя акселерометра при восстановлении активности
         Sensor accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
@@ -73,7 +70,6 @@ public class StepCounterActivity extends AppCompatActivity implements SensorEven
     @Override
     protected void onPause() {
         super.onPause();
-        // Отменяем регистрацию слушателя акселерометра при приостановке активности
         sensorManager.unregisterListener(this);
     }
 }
