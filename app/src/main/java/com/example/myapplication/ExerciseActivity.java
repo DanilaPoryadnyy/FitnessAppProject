@@ -23,7 +23,7 @@ public class ExerciseActivity extends AppCompatActivity implements ExerciseRVAda
         LinearLayoutManager manager = new LinearLayoutManager(this);
         exerciseRV.setLayoutManager(manager);
         exerciseRV.setAdapter(exerciseRVAdapter);
-        addData();
+         addData();
     }
 
     private void addData()
