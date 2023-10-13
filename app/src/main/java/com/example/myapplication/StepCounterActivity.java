@@ -56,6 +56,7 @@ public class StepCounterActivity extends AppCompatActivity implements SensorEven
         }
     }
 
+
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
